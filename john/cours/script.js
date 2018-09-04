@@ -129,3 +129,48 @@ var grosChat=new Chat("gros","jaune",1);
 console.log(grosChat);
 petitChat.miyol();
 grosChat.miyol();
+/*-----------------------------------------------------TOUJOURS LES OBJETS POUR BIEN COMPRENDRE--------------------*/ 
+// premiere maniere de declaration d'un objet
+var poulet={
+    nom:"coque",
+    couleur:"blanc",
+    age:2
+};
+console.log(poulet);//afichage de l'objet Poulet
+console.log(poulet.nom);//affichage d'un attribut de l'objet
+poulet.chante=function(){//on cre une methode chante pour le poulet cad method egale à fucntion associé à poulet
+    console.log("cocorico");
+};
+poulet.chante();//on execute la methode chante pour le poulet avec ()
+// deuxieme methode de creation d'un objet
+var pigeon=new Object();//ici on creé l'objet avec new 
+pigeon.nom="oiseaux";//les attribut de l'objet pigeon
+pigeon.couleur="black";
+pigeon.age=1;
+console.log(pigeon);
+console.log(pigeon.nom);
+pigeon.crie=function(numb){//method du pigeon qui prend un parametre le nombre de crie
+    while(numb>0){//si le nombre de crie est superieur à 0 on l'affiche
+        console.log(numb.toString()+" kiki");
+        numb--;
+    }
+    
+};
+pigeon.crie(5);//execution de la methode du pigeon
+// les constructeurs en js
+var Canard=function(nom,couleur,age){
+    this.nom=nom,
+    this.couleur=couleur,
+    this.age=age
+    this.bruit=function(){
+        console.log("bruit"+this.nom);
+    };
+};
+var petitCanard=new Canard("jolie cananrd","black",1);//instance petit de l'objet canard
+console.log(petitCanard);//affichage de de l'objet petitCanard
+console.log(petitCanard.nom);//attribut specifique
+petitCanard.bruit();//execution de la method
+var grandCanard=new Canard("vilain canard","blanck",4);//instance grandCanard de l'objet canard
+console.log(grandCanard);//affichage de de l'objet grandCanard
+console.log(grandCanard.nom);//attribut specifique
+grandCanard.bruit();//execution de la method
